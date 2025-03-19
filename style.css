@@ -115,26 +115,3 @@ body {
         transform: rotate(360deg);
     }
 }
-
-@media screen and (orientation: landscape) and (max-width: 1024px) {
-    body {
-        overflow: hidden;
-        background: black;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        width: 100vw;
-        font-size: 24px;
-        text-align: center;
-    }
-
-    #unity-container {
-        display: none;
-    }
-
-    body::before {
-        content: "Пожалуйста, поверните устройство в портретный режим!";
-    }
-}
