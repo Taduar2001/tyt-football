@@ -45,17 +45,6 @@
         </div>
     </div>
     <script>
-        if (document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
-        } else if (document.documentElement.mozRequestFullScreen) { // Firefox
-            document.documentElement.mozRequestFullScreen();
-        } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, Opera
-            document.documentElement.webkitRequestFullscreen();
-        } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
-            document.documentElement.msRequestFullscreen();
-        }
-    </script>
-    <script>
         vkBridge.send("VKWebAppInit", {});
         const container = document.querySelector("#unity-container");
         const canvas = document.querySelector("#unity-canvas");
@@ -91,7 +80,7 @@
         // config.matchWebGLToCanvasSize = false;
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
             container.className = "unity-mobile";
-            unityInstance.SetFullscreen(1);
+            
             //config.devicePixelRatio = 1;
         }
 
@@ -130,6 +119,7 @@
         };
 
         document.body.appendChild(script);
+        unityInstance.SetFullscreen(1);
 
     </script>
 </body>
