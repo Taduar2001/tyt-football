@@ -43,29 +43,7 @@
             <div class="spinner"></div>
         </div>
     </div>
-    <script>
-        function isMobile() {
-            return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-        }
-
-        function lockOrientation() {
-            if (isMobile() && screen.orientation) {
-                screen.orientation.lock("portrait").catch(function (error) {
-                    console.log("Orientation lock failed:", error);
-                });
-            }
-        }
-
-        // Проверка ориентации только для мобильных устройств
-        if (isMobile()) {
-            window.addEventListener("load", lockOrientation);
-            window.addEventListener("orientationchange", function () {
-                if (window.innerWidth > window.innerHeight) {
-                    alert("Пожалуйста, переверните устройство!");
-                }
-            });
-        }
-    </script>
+    
     <script>
         vkBridge.send("VKWebAppInit", {});
         const container = document.querySelector("#unity-container");
