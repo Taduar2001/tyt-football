@@ -91,6 +91,7 @@
         // config.matchWebGLToCanvasSize = false;
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
             container.className = "unity-mobile";
+            unityInstance.SetFullscreen(1);
             //config.devicePixelRatio = 1;
         }
 
