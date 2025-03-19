@@ -43,7 +43,14 @@
             <div class="spinner"></div>
         </div>
     </div>
-    
+    <script>
+        var lockFunction = window.screen.orientation.lock;
+        if (lockFunction.call(window.screen.orientation, 'landscape')) {
+            console.log('Orientation locked')
+        } else {
+            console.error('There was a problem in locking the orientation')
+        }
+    </script>
     <script>
         vkBridge.send("VKWebAppInit", {});
         const container = document.querySelector("#unity-container");
